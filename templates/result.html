@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Remover Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: black;
+            text-align: center; 
+        }
+
+        h1 {
+            color: #fdfafa;
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: #e2d3d3;
+        }
+
+        img {
+            width: max-content;
+            height: 400px;
+            display: block;
+            margin-top: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Background Remover Result</h1>
+    <h2>Original Image</h2>
+    <center><img src="{{ url_for('uploaded_file', filename=original_img) }}" alt="Original Image"></center>
+    <h2>Result Image</h2>
+    <center><img src="{{ url_for('uploaded_file', filename='result.png') }}" alt="Result Image"></center>
+    <!-- Download link for the result image -->
+    <button><a class="download-link" href="{{ url_for('download_result', filename='result.png') }}" download>Download Result Image</a></button>
+
+</body>
+</html>
